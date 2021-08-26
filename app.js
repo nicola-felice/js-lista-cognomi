@@ -1,13 +1,14 @@
 
-// creo array lista cognomi
+// create list of surnames
 const listaCognomi = ['bianchi', 'neri', 'rossi', 'verdi', 'gialli'];
 
-// chiedi all’utente il cognome e salvalo
+// ask for user surname
 let cognomeUtente = prompt('inserisci il tuo cognome').toLowerCase();
 
-// funzione che controlla la validità dell'input
+// function to validate input
 function validateUserSurname() {
 
+    // check if it is empty
     if (cognomeUtente == "") {
         return true;
     }
@@ -19,7 +20,7 @@ function validateUserSurname() {
         }
     }
 
-    // checking if it includes invalid characters
+    // check if it includes invalid characters
     const invalidCharacters = [" ", "!", "”", "#", "$", "%", "&", "’", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", ">", "=", "?", "@", "[", "^", "]", "_", "`", "|", "{", "~", "}", "\\"];
     for (let i = 0; i < invalidCharacters.length; i++) {
         if (cognomeUtente.includes(invalidCharacters[i])) {
@@ -31,18 +32,19 @@ function validateUserSurname() {
     return false;
 }
 
-// fai reinserire il cognome finchè non è valido
+// ask for the surname until it is valid
 while (validateUserSurname()) {
     cognomeUtente = prompt("errore, inserisci il tuo cognome in modo valido!").toLowerCase();
 }
 
-// una volta validato inseriscilo con gli altri cognomi
+// insert it in the list
 listaCognomi.push(cognomeUtente);
 
-// riordina la lista cognomi alfabeticamente
+// sort list alphabetically
 listaCognomi.sort();
-// stampa la lista cognomi
+
+// print list
 console.log(listaCognomi);
 
-// scrivi anche la posizione "umana" (partendo da 1) della lista in cui il nuovo utente si trova
+// print position on the list (start by 1)
 console.log(`sei il numero "${listaCognomi.indexOf(cognomeUtente) + 1}" della lista`);
