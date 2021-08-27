@@ -21,7 +21,7 @@ function validateUserSurname() {
     }
 
     // check if it includes invalid characters
-    const invalidCharacters = ["!", "”", "#", "$", "%", "&", "’", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", ">", "=", "?", "@", "[", "^", "]", "_", "`", "|", "{", "~", "}", "\\"];
+    const invalidCharacters = ["!", "”", "#", "$", "%", "&", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", ">", "=", "?", "@", "[", "^", "]", "_", "|", "{", "~", "}", "\\"];
     for (let i = 0; i < invalidCharacters.length; i++) {
         if (cognomeUtente.includes(invalidCharacters[i])) {
             return true;
